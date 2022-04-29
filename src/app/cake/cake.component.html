@@ -1,0 +1,8 @@
+<div class="card" style="width: 18rem; margin: 10px;">
+    <img [src]="cakedata.image" class="card-img-top" (click)="showCakedetails()" alt="..." style="height: 16rem;">
+    <div class="card-body">
+      <h5 class="card-title"(click)="showCakedetails()">{{cakedata.name}}</h5>
+      <p class="card-text" (click)="showCakedetails()">{{cakedata.price | currency: "INR"}}</p>
+      <a class="btn btn-primary" (click)="addtocart()">Add To Cart</a>
+    </div>
+  </div>

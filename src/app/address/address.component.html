@@ -1,0 +1,34 @@
+<div class="container">
+    <h1 style="text-align: center;">Add Address</h1>
+  <form #addressForm="ngForm" (submit)="addAddress()" style="width:40% ; margin:auto;">
+  <div class="form-group mt-3">
+      <label for="">Name</label>
+      <input #ayush="ngModel" name="name" required [(ngModel)]="userdetails.name" type="text" class="form-control">
+  </div>
+
+  <div class="form-group mt-3">
+      <label for="">Address</label>
+      <input name="address" [(ngModel)]="userdetails.address" type="text" class="form-control">
+  </div>
+
+  <div class="form-group mt-3">
+      <label for="">City</label>
+      <input name="city" [(ngModel)]="userdetails.city" type="text" class="form-control">
+  </div>
+
+  <div class="form-group mt-3">
+      <label for="">Pincode</label>
+      <input name="pincode" [(ngModel)]="userdetails.pincode" type="text" class="form-control">
+  </div>
+
+  <div class="form-group mt-3">
+      <label for="">Phone</label>
+      <input name="phone" [(ngModel)]="userdetails.phone" type="text" class="form-control">
+  </div>
+
+  <div class="form-group mt-3">
+  <button (click)="addAddress()" routerLink="/payment" class="btn btn-outline-success">Add Address</button>
+  <button routerLink="/cart" class="btn btn-outline-danger" style="margin-left: 57%;"><fa-icon [icon]="faArrowLeft"></fa-icon>Back</button>    
+  </div>
+</form>
+</div>

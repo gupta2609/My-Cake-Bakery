@@ -1,0 +1,26 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">MY Cake Bakery</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <form class="d-flex">
+            <input name="search" [(ngModel)]="searchtext" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-primary" type="submit" routerLink="/search" (click)="search()"><fa-icon [icon]="faSearch"></fa-icon></button>
+          </form>
+        </ul>
+        <div class="d-flex">
+            <button routerLink="/login" class="btn btn-outline-success" *ngIf="!isloggedin" type="submit"><fa-icon [icon]="faSignIn"></fa-icon> LogIn</button>
+            <button routerLink="/myorders" class="btn btn-outline-primary" *ngIf="isloggedin" type="submit" style="margin-right: 5px;">Orders</button>
+            <button routerLink="/addcake" class="btn btn-outline-primary" *ngIf="isAdmin" type="submit" style="margin-right: 5px;">Add New</button>
+            <button style="margin-right: 10px" routerLink="/cart" *ngIf="isloggedin" class="btn btn-outline-warning position-relative mr-5">
+              <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                  {{ length }} </span>Cart<fa-icon [icon]="faShoppingCart"></fa-icon>
+            </button>
+            <button class="btn btn-outline-danger" *ngIf="isloggedin" (click)="logout()" type="submit">LogOut <fa-icon [icon]="faSignOut"></fa-icon></button>
+        </div>
+      </div>
+    </div>
+  </nav>

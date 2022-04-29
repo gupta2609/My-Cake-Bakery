@@ -1,0 +1,5 @@
+<button (click)="asc()" class="btn btn-outline-dark" style="margin-left: 2px; margin-top: 3px;">Low To High <fa-icon [icon]="faSortAmountAsc"></fa-icon></button>
+<button (click)="desc()" class="btn btn-outline-dark" style="margin-left: 5px; margin-top: 3px;">High To Low <fa-icon [icon]="faSortAmountDesc"></fa-icon></button>
+<div class="row">
+    <app-cake *ngFor="let eachcake of cakes" class="col" [cakedata]="eachcake"></app-cake>
+</div>

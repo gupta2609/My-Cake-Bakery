@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    
+  </head>
+  <body>
+    <div class="container mt-5">
+      <div class="d-flex justify-content-center row">
+        <h1 style="text-align: center">Order History</h1>
+        <div class="col-md-10">
+          <div class="rounded">
+            <div class="table-responsive table-borderless">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th class="text-center"></th>
+                    <th>Order #</th>
+                    <th>Ship To</th>
+                    <th>Status</th>
+                    <th>Total</th>
+                    <th>Items Purchased</th>
+                    <th>Placed on</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody class="table-body">
+                  <tr class="cell-1" *ngFor="let orders of myorders">
+                    <td class="text-center"></td>
+                    <td>{{ orders.orderid }}</td>
+                    <td>{{ orders.name }}</td>
+                    <td *ngIf="orders.pending">
+                      <span class="badge bg-warning text-dark">Pending</span>
+                    </td>
+                    <td *ngIf="!orders.pending">
+                      <span class="badge bg-success">Completed</span>
+                    </td>
+                    <td>{{ orders.price | currency: "INR" }}</td>
+                    <td>{{ orders.cakes.length }}</td>
+                    <td>{{ orders.orderdate | date }}</td>
+                    <td><i class="fa fa-ellipsis-h text-black-50"></i></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
